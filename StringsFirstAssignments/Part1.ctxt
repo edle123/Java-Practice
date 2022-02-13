@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Part1
+comment0.text=\r\n\ Checks\ if\ a\ string\ is\ a\ strand\ of\ DNA.\ If\ it\ is,\ the\ strand\ of\ DNA\ is\ output.\r\n\ Otherwise,\ the\ output\ will\ be\ "Not\ a\ gene."\r\n\ \r\n\ @Eric\ \r\n\ @version\ 1,\ February\ 12th,\ 2022\r\n
+comment1.params=dna
+comment1.target=java.lang.String\ findSimpleGene(java.lang.String)
+comment2.params=
+comment2.target=void\ testSimpleGene()
+numComments=3
