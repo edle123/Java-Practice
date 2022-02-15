@@ -1,12 +1,11 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+This project requires the use of separate CSV files that contain the
+weather data for a series of dates.
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
+PROJECT TITLE: WeatherCSV
 PURPOSE OF PROJECT:
-VERSION or DATE:
+VERSION or DATE: 1, February 14th, 2022
 HOW TO START THIS PROJECT:
-AUTHORS:
+AUTHORS: Eric
 USER INSTRUCTIONS:
