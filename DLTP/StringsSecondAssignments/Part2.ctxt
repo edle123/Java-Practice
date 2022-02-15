@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Part2
+comment0.text=\r\n\ Finds\ how\ many\ times\ one\ string\ is\ found\ within\ another\r\n\ \r\n\ @Eric\r\n\ @version\ 1,\ February\ 12th,\ 2022\r\n
+comment1.params=stringa\ stringb
+comment1.target=int\ howMany(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ testHowMany()
+numComments=3
