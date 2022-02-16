@@ -1,6 +1,6 @@
 
 /**
- * Write a description of Part1 here.
+ * Reads CSV files containing data on baby names and performs calculations based on the data.
  * 
  * @Eric
  * @version 1, February 15th, 2022
