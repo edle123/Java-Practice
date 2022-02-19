@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=WordPlay
+comment0.text=\r\n\ Method\ to\ check\ is\ a\ char\ is\ a\ vowel,\ method\ to\ replace\ vowels\ in\ a\ string,\r\n\ and\ a\ method\ to\ replace\ a\ specified\ char\ in\ a\ string\ to\ either\ a\ '*'\ or\ a\r\n\ '+'\ based\ on\ its\ index.\r\n\ \r\n\ @Eric\r\n\ @version\ 1,\ February\ 19th,\ 2022\r\n
+comment1.params=ch
+comment1.target=boolean\ isVowel(char)
+comment2.params=
+comment2.target=void\ test()
+comment3.params=phrase\ ch
+comment3.target=java.lang.String\ replaceVowels(java.lang.String,\ char)
+comment4.params=phrase\ ch
+comment4.target=java.lang.String\ emphasize(java.lang.String,\ char)
+numComments=5
