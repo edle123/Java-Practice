@@ -20,7 +20,7 @@ public class WordLengths {
             if(length>=30){
                 counts[30] += 1;
             }
-            else{
+            else if(length < 30 && length >= 0){
                 counts[length] += 1;
             }
         }

@@ -40,21 +40,31 @@ public class CaesarBreaker {
         return message;
     }
 
-    public void testDecrypt(){
-        // String test = "I am a test eeeeeeeee";
+    public String decrypt2(String encrypted, int key){
         CaesarCipher cc = new CaesarCipher();
-        FileResource fr1 = new FileResource("ExampleText/wordsLotsOfEs.txt");
-        FileResource fr2 = new FileResource("ExampleText/wordsLotsOfEsEncrypted.txt");
-        String decrypt1 = fr1.asString();
-        String decrypt2 = fr2.asString();
-        // String message = cc.encrypt(test, 4);
-        // System.out.println(test);
-        // System.out.println(message);
-        // System.out.println(decrypt(message));
-        String decrypt3 = decryptTwoKeys(decrypt2);
-        System.out.println(decrypt1);
-        System.out.println(decrypt2);
-        System.out.println(decrypt3);
+        String message = cc.encrypt(encrypted, 26 - key);
+        return message;
+    }
+
+    public void testDecrypt(){
+        // // String test = "I am a test eeeeeeeee";
+        // CaesarCipher cc = new CaesarCipher();
+        // FileResource fr1 = new FileResource("ExampleText/wordsLotsOfEs.txt");
+        // FileResource fr2 = new FileResource("ExampleText/wordsLotsOfEsEncrypted.txt");
+        // String decrypt1 = fr1.asString();
+        // String decrypt2 = fr2.asString();
+        // // String message = cc.encrypt(test, 4);
+        // // System.out.println(test);
+        // // System.out.println(message);
+        // // System.out.println(decrypt(message));
+        // String decrypt3 = decryptTwoKeys(decrypt2);
+        // System.out.println(decrypt1);
+        // System.out.println(decrypt2);
+        // System.out.println(decrypt3);
+        FileResource fr = new FileResource();
+        String test = fr.asString();
+        String decrypt = decryptTwoKeys(test);
+        System.out.println(decrypt);
     }
 
     public String halfOfString(String message, int start){
@@ -84,6 +94,21 @@ public class CaesarBreaker {
         int secondKey = getKey(secondHalf);
         String decryptFirst = decrypt(firstHalf);
         String decryptSecond = decrypt(secondHalf);
+        System.out.println("The first key is: "+firstKey+"\nThe second key is: "+secondKey);
+        for (int i = 0; i < decryptSecond.length(); i++){
+            decrypted = decrypted + decryptFirst.charAt(i) + decryptSecond.charAt(i);
+        }
+        return decrypted;
+    }
+    
+        public String decryptTwoKeys2(String encrypted){
+        String firstHalf = halfOfString(encrypted, 0);
+        String secondHalf = halfOfString(encrypted, 1);
+        String decrypted = "";
+        int firstKey = 2;
+        int secondKey = 20;
+        String decryptFirst = decrypt2(firstHalf,firstKey);
+        String decryptSecond = decrypt2(secondHalf,secondKey);
         System.out.println("The first key is: "+firstKey+"\nThe second key is: "+secondKey);
         for (int i = 0; i < decryptSecond.length(); i++){
             decrypted = decrypted + decryptFirst.charAt(i) + decryptSecond.charAt(i);
