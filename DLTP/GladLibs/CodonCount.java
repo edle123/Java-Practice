@@ -112,5 +112,10 @@ public class CodonCount {
         System.out.println("Most common codon: "+getMostCommonCodon()+"\t"+
         codonsMap.get(getMostCommonCodon()));
         printCodonCounts(1, 5);
+        //Quiz GladLibs Q11
+        codonsMap.clear();
+        buildCodonMap(0, dnaFile);
+        System.out.println("Codons with at least 7 occurences: ");
+        printCodonCounts(7, 100);
     }
 }

@@ -107,5 +107,29 @@ public class WordsInFiles {
         }
         //Prints the mapping for the HashMap
         System.out.println(wordMap.entrySet());
+        //Quiz Q4
+        System.out.println("Words that occur in all five files: "
+        +wordsInNumFiles(5).size());
+        //Quiz Q5
+        System.out.println("Words that occur in four files: "+
+        wordsInNumFiles(4).size());
+        //Quiz Q6
+        System.out.println("The word 'sad' appears in these files: "+
+        wordMap.get("sad"));
+        //Quiz Q7
+        System.out.println("The word 'red' appears in these files: "+
+        wordMap.get("red"));
+        //Quiz GladLibs Q12
+        System.out.println("Words that occur in all seven files: "
+        +wordsInNumFiles(7).size());
+        //Quiz GladLibs Q13
+        System.out.println("Words that occur in four files: "
+        +wordsInNumFiles(4).size());
+        //Quiz GladLib Q14
+        System.out.println("The word 'sea' appears in these files: "
+        +wordMap.get("sea"));
+        //Quiz GladLib Q15
+        System.out.println("The word 'tree' appears in these files: "
+        +wordMap.get("tree"));
     }
 }
