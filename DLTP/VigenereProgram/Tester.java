@@ -6,7 +6,11 @@
  * @version 1, March 3rd, 2022
  */
 import edu.duke.FileResource;
+import edu.duke.DirectoryResource;
+import java.io.File;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.HashMap;
 
 public class Tester {
     public void testCaesarCipher(){
@@ -71,5 +75,52 @@ public class Tester {
         //Quiz Known Language and Key Length Q2
         System.out.println("Known Language and Key Length Question 2: ");
         vb.breakVigenere();
+        //Test mostCommonCharIn(HashSet<String> dictionary)
+        FileResource eng = new FileResource("dictionaries/English");
+        HashSet<String> dictionary = vb.readDictionary(eng);
+        System.out.println("Most common char in English is "
+            +vb.mostCommonCharIn(dictionary));
+    }
+
+    public void unknownKeyLengthQuiz(){
+        VigenereBreaker vb = new VigenereBreaker();
+        FileResource fr = new FileResource("VigenereTestData/secretmessage2.txt");
+        String message = fr.asString();
+        FileResource eng = new FileResource("dictionaries/English");
+        HashSet<String> dictionary = vb.readDictionary(eng);
+        String decrypted = vb.breakForLanguage(message, dictionary);
+        System.out.println(decrypted);
+        //Quiz Unknown Key Length Q4
+        int [] key = vb.tryKeyLength(message, 38, 'e');
+        int count = 0;
+        //HashSet<String> valid = new HashSet<String>();
+        VigenereCipher vc = new VigenereCipher(key);
+        String q4 = vc.decrypt(message);
+        for(String word : q4.split("\\W+")){
+            if(dictionary.contains(word.toLowerCase())){
+                count++;
+                //valid.add(word.toLowerCase());
+            }
+        }
+        System.out.println("Question 4: "+count);
+    }
+
+    public void testBreakingTheVigenereCipherQuiz(){
+        VigenereBreaker vb = new VigenereBreaker();
+        DirectoryResource dr = new DirectoryResource();
+        HashMap <String, HashSet<String>> languages = 
+            new HashMap <String, HashSet<String>>();
+        for(File f : dr.selectedFiles()){
+            String language = f.getName();
+            FileResource fr = new FileResource(f);
+            HashSet<String> dictionary = vb.readDictionary(fr);
+            languages.put(language, dictionary);
+        }
+        FileResource fr = new FileResource("VigenereTestData/secretmessage3.txt");
+        String message = fr.asString();
+        System.out.println("Question 1:\n"+vb.breakForAllLangs(message, languages));
+        FileResource fr2 = new FileResource("VigenereTestData/secretmessage4.txt");
+        String message2 = fr2.asString();
+        System.out.println("Question 3:\n"+vb.breakForAllLangs(message2, languages));
     }
 }
