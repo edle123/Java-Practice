@@ -235,4 +235,25 @@ public class Sudoku {
 		} // End of row
 		return true;
 	} // End of solve()
+	
+	public static boolean check(int [][] grid) {
+		boolean track = true;
+		int count = 0;
+		for (int i = 0; i <= 8; i++) {
+			for (int j = 0; j <= 8; j++) {
+				if(grid[i][j] != 0) {
+					track = isValid(grid,i,j,grid[i][j]);
+					if (track == false) {
+						count++;
+					}
+				}
+			}
+		}
+		if(count == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 } // End of class
